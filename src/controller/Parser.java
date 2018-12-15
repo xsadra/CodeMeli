@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Parser {
-    public List<CityCode> asList(List<String> codes) {
-        return codes.stream()
+    public List<CityCode> asList(List<String> lines) {
+        return lines.stream()
                 .map(code -> code.split(";"))
                 .filter(strings -> !strings[0].trim().isEmpty())
-                .filter(strings -> !(strings[0].trim() == "***"))
+                .filter(strings -> !(strings[0].trim().equals("***")))
                 .map(this::toObject)
                 .collect(Collectors.toList());
     }

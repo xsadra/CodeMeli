@@ -18,4 +18,9 @@ public class CityCode {
     public List<String> getCodes() {
         return codes;
     }
+
+    @Override
+    public String toString() {
+        return "[name: " + name +", codes: " + codes +']';
+    }
 }
